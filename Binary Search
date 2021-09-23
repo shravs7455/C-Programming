@@ -1,5 +1,5 @@
 //Array is sorted. Using low, mid, high 
-Time Complexity - min = O(n) , max = O(logn)
+Time Complexity - min = O(n) , max = O(logn) , Average = O(logn) , 
 
 /* Algorithm
 BinSearch (l,h,key)
