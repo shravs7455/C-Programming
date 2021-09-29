@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,k;
+    cin>>n>>k;
+    int a[n];
+    for(int i=0;i<n;i++)
+        cin>>a[i];
+    //Method 1 - O(n)
+    //Best Case -  descending order - complexity n-1
+    //Worst Case - ascending order - complexity 2(n-1)
+    int max=a[0],min=a[0];
+    for(int i=1;i<n;i++)
+    {
+        if(a[i]<min)
+            min=a[i];
+        else if(a[i]>max)
+            max=a[i];
+    }
+    return 0;
+}
