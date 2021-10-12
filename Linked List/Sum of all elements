@@ -1,0 +1,22 @@
+struct node
+{
+    int data;
+    struct node* next;
+}*first=NULL;
+
+int add(struct node* p)
+{
+    int sum=0;
+    while(p)
+    {
+        sum+=p->data;
+        p=p->next;
+    }
+    return sum;
+}
+int recursive_add(struct node* p)
+{
+    if(p==NULL)
+        return 0;
+    return recursive_add(p->next)+p->data;
+}
