@@ -1,0 +1,22 @@
+struct node
+{
+    int data;
+    struct node* next;
+}*first=NULL;
+
+int count(struct node* p)
+{
+    int c=0;
+    while(p!=NULL)
+    {
+        c++;
+        p=p->next;
+    }
+    return c;
+}
+int recursive_count(struct node* p)
+{
+    if(p==NULL)
+        return 0;
+    return recursive_count(p->next)+1;
+}
