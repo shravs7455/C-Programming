@@ -1,0 +1,25 @@
+
+int max(struct node* p)
+{
+    int max=MIN_INT;
+    while(p)
+    {
+        if(p->data>max)
+            max=p->data;
+        p=p->next;
+    }
+    return max;
+}
+int recursive_max(struct node* p)
+{
+    if(p==NULL)
+        return MIN_INT;
+    else 
+    {
+        x=recursive_max(p->next);
+        /*if(x>p->data)
+            return x;
+        else return p->data;*/ 
+    }
+    return x>p->data?x:p->data; //ternary for the above if check
+}
