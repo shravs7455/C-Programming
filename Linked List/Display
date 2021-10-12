@@ -1,0 +1,21 @@
+struct node
+{
+    int data;
+    struct node* next;
+}*first=NULL;
+void display(struct node* p)
+{
+    while(p!=NULL)
+    {
+        cout<<p->data;
+        p=p->next;
+    }
+}
+void recursive_disp(struct node*p)
+{
+    if(p!=NULL)
+    {
+        cout<<p->data;
+        recursive_disp(p->next;)
+    }
+}
