@@ -1,0 +1,32 @@
+int delete(int pos)
+{
+    if(pos<0||pos>count(p))
+        return -1;
+    node *p, *q;
+    int x=-1,i;
+    if(pos==1)
+    {
+        q=first;
+        x-first->data;
+        first=first->next;
+        delete q;
+        return x;
+    }
+    else
+    {
+        p=first;
+        q=NULL;
+        for(i=0;i<pos-1&&p;i++)
+        {
+            q=p;
+            p=p->next;
+        }
+        if(p)
+        {
+            q->next=p->next;
+            x=p->data;
+            delete p;
+            return x;
+        }
+    }
+}
