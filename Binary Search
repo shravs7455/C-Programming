@@ -58,6 +58,7 @@ int Recursive_BinSearch(int A[], int l, int h, int key)
     }
     return -1;
 }
+
 int BinarySearch(struct Array arr, int key)
 {
     int l,mid,h;
