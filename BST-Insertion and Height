@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+// R 305 - Height of a Binary Search Tree
+typedef struct node{
+    int data;
+    struct node *L;
+    struct node *R;
+}Node;
+Node* newNode(int val){
+    Node *nn=(Node*)malloc(sizeof(Node));
+    nn->data=val;
+    nn->L = nn->R=NULL;
+    return nn;
+}
+Node* insert(Node *root,int val){
+    if(root==NULL) return newNode(val);
+    if(val<=root->data) root->L =insert(root->L,val);
+    else root->R = insert(root->R,val);
+    return root;
+} 
+int height(Node *root){   //hgeight of tree
+    if(root==NULL) return 0;
+    int l,r;
+    l=height(root->L);
+    r=height(root->R);
+    if(l>r) return l+1;
+    return r+1;    
+}
+int main() {
+    int n,val;
+    scanf("%d",&n);
+    Node *root=NULL;
+    for(int i=1;i<=n;i++){
+        scanf("%d",&val);
+        root=insert(root,val);
+    }
+    int h = height(root);
+    printf("%d",h);
+    return 0;
+}
